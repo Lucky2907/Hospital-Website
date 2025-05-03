@@ -14,7 +14,7 @@ A modern, responsive hospital website built with HTML, CSS, and JavaScript. This
 - Smooth animations and modern UI
 
 ## Demo
-![Screenshot](screenshot.png)
+[Visit the live website](https://Lucky2907.github.io/Hospital-Webpage/)
 
 ## Getting Started
 
