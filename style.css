@@ -1,0 +1,489 @@
+/* Preloader */
+
+#preloader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Remove the .loader spinner */
+
+.loader {
+    display: none;
+}
+
+.preloader-logo {
+    width: 80px;
+    margin-top: 20px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: linear-gradient(90deg, #1976d2 60%, #00c6ff 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a237e;
+}
+
+nav .logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1976d2;
+}
+
+.quote-btn {
+    background: linear-gradient(90deg, #1976d2, #00c6ff);
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+}
+
+.quote-btn:hover {
+    box-shadow: 0 4px 20px #1976d2aa;
+}
+
+
+/* Hero Section */
+
+.hero-section {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-slider {
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-content {
+    margin-left: 8vw;
+    color: #222;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    animation: fadeInUp 1s;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-content h1 span {
+    color: #1976d2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.btn {
+    background: linear-gradient(90deg, #1976d2, #00c6ff);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 4px 20px #1976d2aa;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    z-index: 2;
+}
+
+.slider-controls span {
+    font-size: 2rem;
+    color: #1976d2;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.slider-controls span:hover {
+    color: #00c6ff;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-counters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.counter-box {
+    background: rgba(25, 118, 210, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #1976d220;
+    padding: 24px 32px;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.counter-box:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 6px 24px #1976d240;
+}
+
+.counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1976d2;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.counter-box p {
+    margin: 0;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+    .hero-counters {
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 24px;
+    }
+    .counter-box {
+        min-width: 0;
+        width: 80vw;
+        padding: 18px 0;
+    }
+}
+
+
+/* Doctors Section */
+
+.doctors-section {
+    padding: 80px 0;
+    background: #f7faff;
+    text-align: center;
+}
+
+.doctors-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.doctor-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.doctor-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px #1976d2aa;
+    padding: 30px;
+    width: 220px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.doctor-card img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.doctor-card h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 32px #1976d2cc;
+}
+
+.doctor-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+
+/* Services Section */
+
+.services-section {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.service-card {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-radius: 20px;
+    padding: 30px;
+    width: 220px;
+    box-shadow: 0 4px 20px #1976d2aa;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #1976d2;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 32px #1976d2cc;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+
+/* Appointment Section */
+
+.appointment-section {
+    padding: 80px 0;
+    background: #f7faff;
+    text-align: center;
+}
+
+.appointment-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+#appointmentForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#appointmentForm input,
+#appointmentForm select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #1976d2;
+    font-size: 1rem;
+}
+
+#appointmentForm .btn {
+    width: 100%;
+}
+
+
+/* Contact Section */
+
+.contact-section {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.contact-info div {
+    background: #f7faff;
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 200px;
+    box-shadow: 0 4px 20px #1976d2aa;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.contact-info div.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.map-container {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px #1976d2aa;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .doctor-cards,
+    .service-cards,
+    .contact-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-content {
+        margin-left: 0;
+    }
+}
+
+.scroll-arrows {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10000;
+}
+
+.scroll-arrows button {
+    background: linear-gradient(90deg, #1976d2, #00c6ff);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #1976d2aa;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.scroll-arrows button:hover {
+    background: #00c6ff;
+    transform: scale(1.1);
+}
+
+#preloader~.scroll-arrows {
+    display: none;
+}
+
+.hide-arrows {
+    display: none !important;
+}
